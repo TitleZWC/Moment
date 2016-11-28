@@ -1,4 +1,4 @@
-package com.titlezwc.domain;
+package com.titlezwc.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.titlezwc.domain.test", appContext.getPackageName());
+        assertEquals("com.titlezwc.common.test", appContext.getPackageName());
     }
 }
