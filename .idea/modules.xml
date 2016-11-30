@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Moment.iml" filepath="$PROJECT_DIR$/Moment.iml" />
-      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/feature/common/common.iml" filepath="$PROJECT_DIR$/module/feature/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/feature/feature.iml" filepath="$PROJECT_DIR$/module/feature/feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/utils/log/log.iml" filepath="$PROJECT_DIR$/module/utils/log/log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
       <module fileurl="file://$PROJECT_DIR$/presentation/presentation.iml" filepath="$PROJECT_DIR$/presentation/presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/utils/utils.iml" filepath="$PROJECT_DIR$/module/utils/utils.iml" />
     </modules>
   </component>
 </project>

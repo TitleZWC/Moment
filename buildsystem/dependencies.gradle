@@ -5,10 +5,27 @@ allprojects {
 }
 
 ext {
+    androidVersionCode = 1
+    androidVersionName = "1.0"
+
+    boolean debug = true
+
+    build_debug = debug.toString()
+    build_task = java.lang.System.getenv("ENV_DEBUG")
+    build_type = build_task == null ? "debug" : (build_task.contains("Release") ? "release" : "debug")
+    print("build_type = " + build_type)
+
     androidBuildToolsVersion = "24.0.2"
     androidMinSdkVersion = 15
     androidTargetSdkVersion = 24
     androidCompileSdkVersion = 24
+
+    androidApplicationId = "com.titlezwc.moment"
+    testApplicationId = "com.titlezwc.moment.test"
+
+    //debug_log
+    timberVersion = '4.2.0'
+    loggerVersion = '1.15'
 
     //Testing
     robolectricVersion = '3.0'
@@ -24,9 +41,13 @@ ext {
 //            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
 //            rxJava         : "io.reactivex:rxjava:${rxJavaVersion}",
 //    ]
-
-    domainTestDependencies = [
-            junit:              "junit:junit:${jUnitVersion}",
-            mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+    globalDependencies = [
+            timber: "com.jakewharton.timber:timber:${timberVersion}",
+            logger: "com.orhanobut:logger:${loggerVersion}",
+    ]
+    testDependencies = [
+            junit      : "junit:junit:${jUnitVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
     ]
 }

@@ -2,4 +2,5 @@ include ':presentation'
 include ':domain'
 include ':data'
 
-include ':common'
+include ':module:feature:common'
+include ':module:utils:log'
