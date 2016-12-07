@@ -1,4 +1,4 @@
-package com.titlezwc.common;
+package com.titlezwc.common.application;
 
 import android.app.Application;
 
