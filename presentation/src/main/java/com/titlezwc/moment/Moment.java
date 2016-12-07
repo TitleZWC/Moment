@@ -2,7 +2,7 @@ package com.titlezwc.moment;
 
 import android.util.Log;
 
-import com.titlezwc.common.*;
+import com.titlezwc.common.application.BaseApplication;
 import com.titlezwc.log.Logger;
 import com.titlezwc.log.printer.LoggerOptions;
 import com.titlezwc.log.writer.DatabaseWriter;
