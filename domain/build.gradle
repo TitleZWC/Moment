@@ -16,12 +16,12 @@ sourceSets {
 
 dependencies {
 //    def domainDependencies = rootProject.ext.domainDependencies
-    def domainTestDependencies = rootProject.ext.domainTestDependencies
+    def testDependencies = rootProject.ext.testDependencies
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    testCompile domainTestDependencies.junit
-    testCompile domainTestDependencies.mockito
+    testCompile testDependencies.junit
+    testCompile testDependencies.mockito
 
     testCompile 'junit:junit:4.12'
 }

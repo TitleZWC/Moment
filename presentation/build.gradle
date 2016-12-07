@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
-
+    def build_debug = globalConfiguration.getAt("build_debug").equals("true")
     compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
     buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
 
@@ -14,13 +14,22 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        buildConfigField "long","BUILD_TIME",System.currentTimeMillis().toString()+"L"
     }
     buildTypes {
         release {
+            buildConfigField "boolean","MOMENT_DEBUG",String.valueOf(build_debug)
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField "boolean","MOMENT_DEBUG","true"
+        }
+
     }
 }
 
@@ -31,7 +40,9 @@ dependencies {
     })
     compile project(':domain')
     compile project(':data')
-    compile project(':common')
+
+    compile project(':module:feature:common')
+//    compile project(':module:utils:log')
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 }
