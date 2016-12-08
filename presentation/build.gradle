@@ -38,6 +38,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    compile globalDependencies.rxJava
+    compile globalDependencies.rxAndroid
+    compile globalDependencies.javaxInject
+    compile globalDependencies.javaxAnnotation
     compile project(':domain')
     compile project(':data')
 

@@ -1,9 +1,8 @@
 package com.titlezwc.moment;
 
 import android.os.Bundle;
-import android.util.Log;
 
-import com.titlezwc.common.BaseActivity;
+import com.titlezwc.common.view.activity.BaseActivity;
 import com.titlezwc.log.LogUtils;
 
 public class MainActivity extends BaseActivity {

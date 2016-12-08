@@ -1,4 +1,4 @@
-package com.titlezwc.common;
+package com.titlezwc.common.view.activity;
 
 import android.support.v7.app.AppCompatActivity;
 
