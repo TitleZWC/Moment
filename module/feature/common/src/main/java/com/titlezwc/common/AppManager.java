@@ -9,13 +9,17 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Stack;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 /**
  * Created by TitleZWC on 2016/12/8.
  */
-
+@Singleton
 public class AppManager {
     private Stack<Activity> activityStack = new Stack<>();
 
+    @Inject
     public AppManager() {
         LogUtils.d("Inject AppManager init");
     }

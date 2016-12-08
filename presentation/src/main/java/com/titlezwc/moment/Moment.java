@@ -20,6 +20,11 @@ public class Moment extends BaseApplication {
         initLog();
     }
 
+    @Override
+    protected boolean debugEnable() {
+        return DEBUG;
+    }
+
     private void initLog() {
         boolean buildType = DEBUG && BuildConfig.DEBUG;
         Logger.init(new LoggerOptions.Builder().logLevel(buildType ? Log.VERBOSE : Log.ERROR)
