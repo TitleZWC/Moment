@@ -13,7 +13,8 @@ import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
 
 public class ActivityProxyImpl implements ActivityProxyListener {
     private final BaseApplication mApplication;
-    public  ActivityProxyImpl(BaseApplication application){
+
+    public ActivityProxyImpl(BaseApplication application) {
         mApplication = application;
     }
 
