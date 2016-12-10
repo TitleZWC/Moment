@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 24
@@ -24,6 +25,8 @@ android {
 dependencies {
 
     def globalDependencies = rootProject.ext.globalDependencies
+    def build_debug = globalDependencies.getAt("build_debug").equals("true")
+    def build_type = globalDependencies.getAt("build_type").equals("debug")
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -35,6 +38,16 @@ dependencies {
     compile globalDependencies.multidex
     provided globalDependencies.rxAndroid
     provided globalDependencies.javaxAnnotation
+    provided globalDependencies.dagger
+    apt globalDependencies.daggerCompiler
+
+    if(build_type&&build_debug){
+        compile globalDependencies.leakCanary
+    }else{
+        compile globalDependencies.leakCanary_no_op
+    }
+    testCompile globalDependencies.leakCanary_no_op
+
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 }

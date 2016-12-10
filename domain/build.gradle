@@ -21,6 +21,8 @@ dependencies {
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile globalDependencies.javaxInject
+    compile globalDependencies.rxJava
+    compile globalDependencies.javaxAnnotation
     testCompile testDependencies.junit
     testCompile testDependencies.mockito
 

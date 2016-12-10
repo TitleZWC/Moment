@@ -8,8 +8,12 @@ import android.content.res.Configuration;
 
 public interface ApplicationProxyListener {
     void onCreate(String processName);
+
     void onLowMemory();
+
     void onTerminate();
+
     void onTrimMemory(int level);
+
     void onConfigurationChanged(Configuration newConfig);
 }

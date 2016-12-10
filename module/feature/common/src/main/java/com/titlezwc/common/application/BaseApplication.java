@@ -7,9 +7,19 @@ import android.location.LocationManager;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.titlezwc.common.application.proxy.ApplicationProxy;
+import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
 import com.titlezwc.common.assist.AppLifeCycle;
 import com.titlezwc.common.assist.AppLifeCycleEvent;
+import com.titlezwc.common.internal.di.HasComponent;
+import com.titlezwc.common.internal.di.component.ApplicationComponent;
+import com.titlezwc.common.internal.di.component.DaggerApplicationComponent;
+import com.titlezwc.common.internal.di.modules.ApplicationModule;
+import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.data.net.AppInfo;
 import com.titlezwc.log.LogUtils;
 
 import javax.inject.Inject;
@@ -19,12 +29,12 @@ import javax.inject.Inject;
  * Created by Administrator on 2016/11/28.
  */
 
-public abstract class BaseApplication extends Application implements  AppLifeCycleEvent{//HasComponent<ApplicationComponent>, AppLifeCycleEvent {
-//    private ApplicationComponent mApplicationComponenr;
+public abstract class BaseApplication extends Application implements HasComponent<ApplicationComponent>, AppLifeCycleEvent {
+    private ApplicationComponent mApplicationComponent;
     @Inject
     protected Handler mMainHandler;
-    @Inject
-    protected LocationManager mLocationManager;
+    //    @Inject
+//    protected LocationManager mLocationManager;
     @Inject
     protected ApplicationProxy mApplicationProxy;
     @Inject
@@ -36,17 +46,51 @@ public abstract class BaseApplication extends Application implements  AppLifeCyc
         LogUtils.d("onCreate");
         initializeInjector();
         initializeDetectionComponent();
-//        mApplicationProxy.onCreate(getComonpent().appInfo().getProcessName());
+        mApplicationProxy.onCreate(getComponent().appInfo().getProcessName());
     }
 
+    @Override
+    public ApplicationComponent getComponent()
+
+    {
+        return this.mApplicationComponent;
+    }
+
+
+    public BaseApplication() {
+        super();
+    }
+
+    @Override
+    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks callback) {
+        super.registerActivityLifecycleCallbacks(callback);
+    }
 
     private void initializeInjector() {
-
+        mApplicationComponent = DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule.Builder()
+                        .applicationProxyListener(getApplicationProxyListener())
+                        .activityProxyListener(getActivityProxyListener())
+                        .fragmentProxyListener(getFragmentProxyListener())
+                        .applicationActionProxyListener(getApplicationActionProxyListener())
+                        .appInfo(getAppInfo())
+                        .application(this)
+                        .build())
+                .build();
+        mApplicationComponent.inject(this);
     }
 
-//    public ApplicationComponent getComponent() {
-//        return mApplicationComponenr;
-//    }
+
+    protected abstract ApplicationProxyListener getApplicationProxyListener();
+
+    protected abstract ActivityProxyListener getActivityProxyListener();
+
+    protected abstract FragmentProxyListener getFragmentProxyListener();
+
+    protected abstract ApplicationActionProxyListener getApplicationActionProxyListener();
+
+    protected abstract AppInfo getAppInfo();
+
 
     @Override
     public void onLowMemory() {
@@ -93,10 +137,9 @@ public abstract class BaseApplication extends Application implements  AppLifeCyc
     protected abstract boolean debugEnable();
 
     private void initializeDetectionComponent() {
-//        if(debugEnable()){
-//            AppBlockCanary.start(this,debugEnable());
-//            LeakCanary.install(this)
-//        }
+        if (debugEnable()) {
+            LeakCanary.install(this);
+        }
     }
 
     @Override
@@ -108,4 +151,5 @@ public abstract class BaseApplication extends Application implements  AppLifeCyc
     public void onAppForeground() {
         mAppLifeCycle.onAppForeground();
     }
+
 }
