@@ -1,13 +1,16 @@
 package com.titlezwc.moment;
 
+import android.os.Build;
 import android.util.Log;
 
 import com.titlezwc.common.application.BaseApplication;
 import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
 import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.common.utils.AppUtils;
 import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
 import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
 import com.titlezwc.data.net.AppInfo;
+import com.titlezwc.log.LogUtils;
 import com.titlezwc.log.Logger;
 import com.titlezwc.log.printer.LoggerOptions;
 import com.titlezwc.log.writer.DatabaseWriter;
@@ -22,11 +25,13 @@ import com.titlezwc.moment.presentation.proxy.impl.FragmentProxyImpl;
 
 public class Moment extends BaseApplication {
     public static final boolean DEBUG = BuildConfig.MOMENT_DEBUG;
+    private String mProcessName = null;
 
     @Override
     public void onCreate() {
-        super.onCreate();
         initLog();
+        super.onCreate();
+        mProcessName = AppUtils.getProcessName(this);
     }
 
     @Override
@@ -51,7 +56,21 @@ public class Moment extends BaseApplication {
 
     @Override
     protected AppInfo getAppInfo() {
-        return null;
+        AppInfo appInfo = new AppInfo();
+        appInfo.setLang(AppUtils.getLanguage(this));
+        LogUtils.d("language:{}", AppUtils.getLanguage(this));
+        appInfo.setOs("android");
+        appInfo.setAppVer(BuildConfig.VERSION_NAME);
+        appInfo.setChannel(BuildConfig.FLAVOR);
+        appInfo.setDevice(Build.MODEL);
+        appInfo.setDeviceVersion(Build.VERSION.RELEASE);
+//        appInfo.setUuid(getUUID());
+        appInfo.setRoot(AppUtils.isRootSystem());
+        appInfo.setStartTs(System.currentTimeMillis());
+        appInfo.setProcessName(mProcessName);
+        appInfo.setDebug(BuildConfig.DEBUG);
+        appInfo.setAppVersionCode(BuildConfig.VERSION_CODE);
+        return appInfo;
     }
 
     @Override

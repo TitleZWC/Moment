@@ -1,7 +1,6 @@
 package com.titlezwc.common.internal.di.modules;
 
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -26,7 +25,7 @@ import dagger.Provides;
 
 @Module
 public class ApplicationModule {
-    private final BaseApplication mAppication;
+    private final BaseApplication mApplication;
     private final Handler mHandler;
     private final ApplicationProxyListener mApplicationProxyListener;
     private final ActivityProxyListener mActivityProxyListener;
@@ -34,8 +33,13 @@ public class ApplicationModule {
     private final ApplicationActionProxyListener mApplicationActionProxyListener;
     private final AppInfo mAppInfo;
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
     private ApplicationModule(Builder builder) {
-        this.mAppication = builder.appication;
+        this.mApplication = builder.application;
         mHandler = new Handler();
         this.mApplicationProxyListener = builder.applicationProxyListener;
         this.mActivityProxyListener = builder.activityProxyListener;
@@ -47,7 +51,13 @@ public class ApplicationModule {
     @Provides
     @Singleton
     Context providedContext() {
-        return this.mAppication;
+        return this.mApplication;
+    }
+
+    @Provides
+    @Singleton
+    BaseApplication providedApplication() {
+        return this.mApplication;
     }
 
     @Provides
@@ -87,8 +97,7 @@ public class ApplicationModule {
     }
 
     public static class Builder {
-        private BaseApplication appication;
-        private Handler handler;
+        private BaseApplication application;
         private ApplicationProxyListener applicationProxyListener;
         private ActivityProxyListener activityProxyListener;
         private FragmentProxyListener fragmentProxyListener;
@@ -99,8 +108,8 @@ public class ApplicationModule {
 
         }
 
-        public Builder appication(@NonNull BaseApplication appication) {
-            this.appication = appication;
+        public Builder application(@NonNull BaseApplication application) {
+            this.application = application;
             return this;
         }
 

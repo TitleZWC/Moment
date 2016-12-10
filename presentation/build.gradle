@@ -39,7 +39,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    provided globalDependencies.dagger
+    compile globalDependencies.dagger
     apt globalDependencies.daggerCompiler
     compile globalDependencies.rxJava
     compile globalDependencies.rxAndroid
