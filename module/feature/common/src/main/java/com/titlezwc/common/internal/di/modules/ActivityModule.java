@@ -4,12 +4,13 @@ import android.app.Activity;
 
 import com.titlezwc.domain.internal.di.PerActivity;
 
+import dagger.Module;
 import dagger.Provides;
 
 /**
  * Created by TitleZWC on 2016/12/12.
  */
-
+@Module
 public class ActivityModule {
     private final Activity activity;
 

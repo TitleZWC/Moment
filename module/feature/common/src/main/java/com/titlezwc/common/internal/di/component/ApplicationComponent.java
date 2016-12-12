@@ -3,6 +3,7 @@ package com.titlezwc.common.internal.di.component;
 import android.content.Context;
 import android.os.Handler;
 
+import com.titlezwc.common.AppManager;
 import com.titlezwc.common.application.BaseApplication;
 import com.titlezwc.common.application.proxy.ApplicationActionProxy;
 import com.titlezwc.common.application.proxy.ApplicationProxy;
@@ -38,4 +39,6 @@ public interface ApplicationComponent {
     ActivityProxy activityProxy();
 
     FragmentProxy fragmentProxy();
+
+    AppManager appManager();
 }
