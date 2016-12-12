@@ -33,8 +33,7 @@ public abstract class BaseApplication extends Application implements HasComponen
     private ApplicationComponent mApplicationComponent;
     @Inject
     protected Handler mMainHandler;
-    //    @Inject
-//    protected LocationManager mLocationManager;
+
     @Inject
     protected ApplicationProxy mApplicationProxy;
     @Inject
