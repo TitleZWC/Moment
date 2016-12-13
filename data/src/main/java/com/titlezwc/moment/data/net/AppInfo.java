@@ -1,4 +1,4 @@
-package com.titlezwc.data.net;
+package com.titlezwc.moment.data.net;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

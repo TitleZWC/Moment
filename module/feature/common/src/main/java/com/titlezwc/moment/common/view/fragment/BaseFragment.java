@@ -1,4 +1,4 @@
-package com.titlezwc.common.view.fragment;
+package com.titlezwc.moment.common.view.fragment;
 
 import android.support.v4.app.Fragment;
 

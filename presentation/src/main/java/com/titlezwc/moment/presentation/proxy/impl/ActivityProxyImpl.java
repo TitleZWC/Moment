@@ -3,9 +3,9 @@ package com.titlezwc.moment.presentation.proxy.impl;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.view.activity.BaseActivity;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.view.activity.BaseActivity;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
 
 /**
  * Created by TitleZWC on 2016/12/9.

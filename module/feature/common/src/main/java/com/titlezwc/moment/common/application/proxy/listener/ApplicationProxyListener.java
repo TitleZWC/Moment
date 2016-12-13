@@ -1,4 +1,4 @@
-package com.titlezwc.common.application.proxy.listener;
+package com.titlezwc.moment.common.application.proxy.listener;
 
 import android.content.res.Configuration;
 

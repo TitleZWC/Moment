@@ -1,4 +1,4 @@
-package com.titlezwc.log.writer;
+package com.titlezwc.moment.log.writer;
 
 /**
  * Created by TitleZWC on 2016/11/30.

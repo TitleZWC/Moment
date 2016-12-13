@@ -1,18 +1,18 @@
-package com.titlezwc.common.internal.di.modules;
+package com.titlezwc.moment.common.internal.di.modules;
 
 
 import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
-import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
-import com.titlezwc.common.view.proxy.listener.DefaultActivityProxyListener;
-import com.titlezwc.common.view.proxy.listener.DefaultFragmentProxyListener;
-import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
-import com.titlezwc.data.net.AppInfo;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.DefaultActivityProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.DefaultFragmentProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.data.net.AppInfo;
 
 import javax.inject.Singleton;
 

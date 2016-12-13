@@ -1,4 +1,4 @@
-package com.titlezwc.log.printer;
+package com.titlezwc.moment.log.printer;
 
 import android.util.Log;
 

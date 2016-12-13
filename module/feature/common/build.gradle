@@ -32,6 +32,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':module:utils:log')
+    compile project(':module:resource')
     compile project(':data')
     compile project(':domain')
 

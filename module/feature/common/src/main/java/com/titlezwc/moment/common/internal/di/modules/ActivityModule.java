@@ -1,8 +1,8 @@
-package com.titlezwc.common.internal.di.modules;
+package com.titlezwc.moment.common.internal.di.modules;
 
 import android.app.Activity;
 
-import com.titlezwc.domain.internal.di.PerActivity;
+import com.titlezwc.moment.domain.internal.di.PerActivity;
 
 import dagger.Module;
 import dagger.Provides;

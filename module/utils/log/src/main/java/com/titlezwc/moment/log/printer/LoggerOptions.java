@@ -1,12 +1,12 @@
-package com.titlezwc.log.printer;
+package com.titlezwc.moment.log.printer;
 
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.titlezwc.log.writer.DatabaseWriter;
-import com.titlezwc.log.writer.DefaultWriter;
-import com.titlezwc.log.writer.TextWriter;
-import com.titlezwc.log.writer.Writer;
+import com.titlezwc.moment.log.writer.DatabaseWriter;
+import com.titlezwc.moment.log.writer.DefaultWriter;
+import com.titlezwc.moment.log.writer.TextWriter;
+import com.titlezwc.moment.log.writer.Writer;
 
 /**
  * Created by TitleZWC on 2016/11/29.

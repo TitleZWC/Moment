@@ -1,4 +1,4 @@
-package com.titlezwc.common;
+package com.titlezwc.moment.common;
 
 import org.junit.Test;
 

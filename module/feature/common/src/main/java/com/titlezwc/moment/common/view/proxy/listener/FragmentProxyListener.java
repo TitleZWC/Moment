@@ -1,7 +1,7 @@
-package com.titlezwc.common.view.proxy.listener;
+package com.titlezwc.moment.common.view.proxy.listener;
 
 
-import com.titlezwc.common.view.fragment.BaseFragment;
+import com.titlezwc.moment.common.view.fragment.BaseFragment;
 
 /**
  * Created by TitleZWC on 2016/12/9.

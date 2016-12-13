@@ -1,8 +1,8 @@
 package com.titlezwc.moment.presentation.proxy.impl;
 
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.view.fragment.BaseFragment;
-import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.view.fragment.BaseFragment;
+import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
 
 /**
  * Created by TitleZWC on 2016/12/9.

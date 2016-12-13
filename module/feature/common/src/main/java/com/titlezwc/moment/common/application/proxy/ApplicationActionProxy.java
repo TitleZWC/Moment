@@ -1,10 +1,10 @@
-package com.titlezwc.common.application.proxy;
+package com.titlezwc.moment.common.application.proxy;
 
-import com.titlezwc.common.AppManager;
-import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
-import com.titlezwc.domain.net.http.HttpError;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.AppManager;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.domain.net.http.HttpError;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

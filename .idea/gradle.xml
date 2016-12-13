@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/module" />
             <option value="$PROJECT_DIR$/module/feature" />
             <option value="$PROJECT_DIR$/module/feature/common" />
+            <option value="$PROJECT_DIR$/module/resource" />
             <option value="$PROJECT_DIR$/module/utils" />
             <option value="$PROJECT_DIR$/module/utils/log" />
             <option value="$PROJECT_DIR$/presentation" />

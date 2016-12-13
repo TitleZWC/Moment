@@ -1,4 +1,4 @@
-package com.titlezwc.common;
+package com.titlezwc.moment.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.titlezwc.common.test", appContext.getPackageName());
+        assertEquals("com.titlezwc.moment.common.test", appContext.getPackageName());
     }
 }

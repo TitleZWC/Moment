@@ -2,8 +2,8 @@ package com.titlezwc.moment.presentation.proxy.impl;
 
 import android.content.res.Configuration;
 
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
 
 /**
  * Created by TitleZWC on 2016/12/9.
