@@ -1,9 +1,9 @@
-package com.titlezwc.common.view.proxy.listener;
+package com.titlezwc.moment.common.view.proxy.listener;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.titlezwc.common.view.activity.BaseActivity;
+import com.titlezwc.moment.common.view.activity.BaseActivity;
 
 /**
  * Created by TitleZWC on 2016/12/9.

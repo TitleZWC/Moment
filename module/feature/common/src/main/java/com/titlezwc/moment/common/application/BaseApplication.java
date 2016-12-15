@@ -1,4 +1,4 @@
-package com.titlezwc.common.application;
+package com.titlezwc.moment.common.application;
 
 import android.app.Application;
 import android.content.Context;
@@ -8,19 +8,19 @@ import android.os.Handler;
 import android.support.multidex.MultiDex;
 
 import com.squareup.leakcanary.LeakCanary;
-import com.titlezwc.common.application.proxy.ApplicationProxy;
-import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
-import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
-import com.titlezwc.common.assist.AppLifeCycle;
-import com.titlezwc.common.assist.AppLifeCycleEvent;
-import com.titlezwc.common.internal.di.HasComponent;
-import com.titlezwc.common.internal.di.component.ApplicationComponent;
-import com.titlezwc.common.internal.di.component.DaggerApplicationComponent;
-import com.titlezwc.common.internal.di.modules.ApplicationModule;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
-import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
-import com.titlezwc.data.net.AppInfo;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.application.proxy.ApplicationProxy;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.moment.common.assist.AppLifeCycle;
+import com.titlezwc.moment.common.assist.AppLifeCycleEvent;
+import com.titlezwc.moment.common.internal.di.HasComponent;
+import com.titlezwc.moment.common.internal.di.component.ApplicationComponent;
+import com.titlezwc.moment.common.internal.di.component.DaggerApplicationComponent;
+import com.titlezwc.moment.common.internal.di.modules.ApplicationModule;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.data.net.AppInfo;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

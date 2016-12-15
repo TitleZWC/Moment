@@ -1,4 +1,4 @@
-package com.titlezwc.common.constant;
+package com.titlezwc.moment.common.constant;
 
 /**
  * Created by TitleZWC on 2016/12/13.

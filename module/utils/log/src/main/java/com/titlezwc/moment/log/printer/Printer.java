@@ -1,9 +1,9 @@
-package com.titlezwc.log.printer;
+package com.titlezwc.moment.log.printer;
 
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.titlezwc.log.helper.MessageFormatter;
+import com.titlezwc.moment.log.helper.MessageFormatter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

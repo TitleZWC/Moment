@@ -1,9 +1,9 @@
-package com.titlezwc.common.application.proxy;
+package com.titlezwc.moment.common.application.proxy;
 
 import android.content.res.Configuration;
 
-import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

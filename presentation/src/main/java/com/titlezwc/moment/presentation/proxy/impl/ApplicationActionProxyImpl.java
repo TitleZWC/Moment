@@ -1,9 +1,9 @@
 package com.titlezwc.moment.presentation.proxy.impl;
 
-import com.titlezwc.common.AppManager;
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
-import com.titlezwc.domain.net.http.HttpError;
+import com.titlezwc.moment.common.AppManager;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.moment.domain.net.http.HttpError;
 
 /**
  * Created by TitleZWC on 2016/12/9.

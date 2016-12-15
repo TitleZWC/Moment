@@ -1,10 +1,10 @@
-package com.titlezwc.log;
+package com.titlezwc.moment.log;
 
 import android.util.Log;
 
-import com.titlezwc.log.printer.LoggerOptions;
-import com.titlezwc.log.printer.Printer;
-import com.titlezwc.log.printer.PrinterFactory;
+import com.titlezwc.moment.log.printer.LoggerOptions;
+import com.titlezwc.moment.log.printer.Printer;
+import com.titlezwc.moment.log.printer.PrinterFactory;
 
 import org.json.JSONObject;
 
@@ -43,8 +43,8 @@ public class Logger {
         printer.e(throwable, message, args);
     }
 
-    public static void e(boolean recoder, Throwable throwable, String message, Object... args) {
-        printer.e(recoder, throwable, message, args);
+    public static void e(boolean record, Throwable throwable, String message, Object... args) {
+        printer.e(record, throwable, message, args);
     }
 
     public static void w(String message, Object... args) {

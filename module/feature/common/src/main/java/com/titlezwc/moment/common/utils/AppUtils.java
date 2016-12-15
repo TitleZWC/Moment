@@ -1,4 +1,4 @@
-package com.titlezwc.common.utils;
+package com.titlezwc.moment.common.utils;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;

@@ -1,8 +1,8 @@
-package com.titlezwc.common.view.proxy;
+package com.titlezwc.moment.common.view.proxy;
 
-import com.titlezwc.common.view.fragment.BaseFragment;
-import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.view.fragment.BaseFragment;
+import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

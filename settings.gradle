@@ -3,4 +3,5 @@ include ':domain'
 include ':data'
 
 include ':module:feature:common'
+include ':module:resource'
 include ':module:utils:log'

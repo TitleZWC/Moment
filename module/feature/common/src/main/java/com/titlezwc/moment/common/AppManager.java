@@ -1,9 +1,9 @@
-package com.titlezwc.common;
+package com.titlezwc.moment.common;
 
 import android.app.Activity;
 import android.content.Context;
 
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.log.LogUtils;
 
 import java.util.Arrays;
 import java.util.Comparator;

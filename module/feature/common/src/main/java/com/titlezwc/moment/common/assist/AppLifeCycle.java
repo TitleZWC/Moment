@@ -1,4 +1,4 @@
-package com.titlezwc.common.assist;
+package com.titlezwc.moment.common.assist;
 
 import javax.inject.Inject;
 

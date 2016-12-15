@@ -3,21 +3,22 @@ package com.titlezwc.moment;
 import android.os.Build;
 import android.util.Log;
 
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.application.proxy.listener.ApplicationActionProxyListener;
-import com.titlezwc.common.application.proxy.listener.ApplicationProxyListener;
-import com.titlezwc.common.utils.AppUtils;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
-import com.titlezwc.common.view.proxy.listener.FragmentProxyListener;
-import com.titlezwc.data.net.AppInfo;
-import com.titlezwc.log.LogUtils;
-import com.titlezwc.log.Logger;
-import com.titlezwc.log.printer.LoggerOptions;
-import com.titlezwc.log.writer.DatabaseWriter;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
+import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
+import com.titlezwc.moment.common.utils.AppUtils;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.data.net.AppInfo;
+import com.titlezwc.moment.log.LogUtils;
+import com.titlezwc.moment.log.Logger;
+import com.titlezwc.moment.log.printer.LoggerOptions;
+import com.titlezwc.moment.log.writer.DatabaseWriter;
 import com.titlezwc.moment.presentation.proxy.impl.ActivityProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.ApplicationActionProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.ApplicationProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.FragmentProxyImpl;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Administrator on 2016/11/28.
@@ -85,5 +86,10 @@ public class Moment extends BaseApplication {
                 .printEnable(buildType)
                 .writeEnable(buildType)
                 .build());
+    }
+
+    private void initUmeng() {
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(this, "5853147f1061d21be7002746", BuildConfig.FLAVOR));
     }
 }

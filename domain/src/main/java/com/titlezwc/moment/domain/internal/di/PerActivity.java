@@ -1,4 +1,4 @@
-package com.titlezwc.domain.internal.di;
+package com.titlezwc.moment.domain.internal.di;
 
 import java.lang.annotation.Retention;
 

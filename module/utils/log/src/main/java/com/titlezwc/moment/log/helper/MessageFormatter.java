@@ -1,4 +1,4 @@
-package com.titlezwc.log.helper;
+package com.titlezwc.moment.log.helper;
 
 import java.util.HashMap;
 import java.util.Map;

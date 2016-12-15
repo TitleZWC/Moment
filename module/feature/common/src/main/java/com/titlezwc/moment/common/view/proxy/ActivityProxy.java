@@ -1,11 +1,11 @@
-package com.titlezwc.common.view.proxy;
+package com.titlezwc.moment.common.view.proxy;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.titlezwc.common.view.activity.BaseActivity;
-import com.titlezwc.common.view.proxy.listener.ActivityProxyListener;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.view.activity.BaseActivity;
+import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

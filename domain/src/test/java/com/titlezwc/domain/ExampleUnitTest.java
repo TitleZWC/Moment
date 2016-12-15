@@ -1,4 +1,4 @@
-package com.titlezwc.domain;
+package com.titlezwc.moment.domain;
 
 import org.junit.Test;
 

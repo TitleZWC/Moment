@@ -1,4 +1,4 @@
-package com.titlezwc.common.view.activity;
+package com.titlezwc.moment.common.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,16 +10,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 
-import com.titlezwc.common.AppManager;
-import com.titlezwc.common.application.BaseApplication;
-import com.titlezwc.common.internal.di.HasComponent;
-import com.titlezwc.common.internal.di.component.ActivityComponent;
-import com.titlezwc.common.internal.di.component.ApplicationComponent;
-import com.titlezwc.common.internal.di.component.DaggerActivityComponent;
-import com.titlezwc.common.internal.di.modules.ActivityModule;
-import com.titlezwc.common.navigation.Navigator;
-import com.titlezwc.common.view.proxy.ActivityProxy;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.AppManager;
+import com.titlezwc.moment.common.application.BaseApplication;
+import com.titlezwc.moment.common.internal.di.HasComponent;
+import com.titlezwc.moment.common.internal.di.component.ActivityComponent;
+import com.titlezwc.moment.common.internal.di.component.ApplicationComponent;
+import com.titlezwc.moment.common.internal.di.component.DaggerActivityComponent;
+import com.titlezwc.moment.common.internal.di.modules.ActivityModule;
+import com.titlezwc.moment.common.navigation.Navigator;
+import com.titlezwc.moment.common.view.proxy.ActivityProxy;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 

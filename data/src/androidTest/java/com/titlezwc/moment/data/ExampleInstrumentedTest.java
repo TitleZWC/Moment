@@ -1,4 +1,4 @@
-package com.titlezwc.data;
+package com.titlezwc.moment.data;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.titlezwc.data.test", appContext.getPackageName());
+        assertEquals("com.titlezwc.moment.data.test", appContext.getPackageName());
     }
 }

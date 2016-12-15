@@ -1,4 +1,4 @@
-package com.titlezwc.domain.net.http;
+package com.titlezwc.moment.domain.net.http;
 
 import java.lang.ref.WeakReference;
 

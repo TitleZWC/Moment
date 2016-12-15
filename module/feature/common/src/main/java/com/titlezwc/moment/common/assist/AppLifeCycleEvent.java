@@ -1,4 +1,4 @@
-package com.titlezwc.common.assist;
+package com.titlezwc.moment.common.assist;
 
 /**
  * Created by TitleZWC on 2016/12/8.

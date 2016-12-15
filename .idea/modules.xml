@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/module/utils/log/log.iml" filepath="$PROJECT_DIR$/module/utils/log/log.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
       <module fileurl="file://$PROJECT_DIR$/presentation/presentation.iml" filepath="$PROJECT_DIR$/presentation/presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/resource/resource.iml" filepath="$PROJECT_DIR$/module/resource/resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/module/utils/utils.iml" filepath="$PROJECT_DIR$/module/utils/utils.iml" />
     </modules>
   </component>

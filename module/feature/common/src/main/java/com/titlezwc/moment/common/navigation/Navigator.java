@@ -1,12 +1,12 @@
-package com.titlezwc.common.navigation;
+package com.titlezwc.moment.common.navigation;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-
-import com.titlezwc.common.constant.AnimType;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.resource.R;
+import com.titlezwc.moment.common.constant.AnimType;
+import com.titlezwc.moment.log.LogUtils;
 
 import javax.inject.Inject;
 
@@ -97,16 +97,16 @@ public class Navigator {
     private void withAnim(Activity activity, int animType) {
         switch (animType) {
             case AnimType.TYPE_TOP2DOWN:
-                activity.overridePendingTransition(3, 7);
+                activity.overridePendingTransition(R.anim.push_down_in, R.anim.push_down_out);
                 break;
             case AnimType.TYPE_LEFT2RIGHT:
-                activity.overridePendingTransition(3, 7);
+                activity.overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
                 break;
             case AnimType.TYPE_DOWN2TOP:
-                activity.overridePendingTransition(3, 7);
+                activity.overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
                 break;
             case AnimType.TYPE_RIGHT2LEFT:
-                activity.overridePendingTransition(3, 7);
+                activity.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
         }
     }

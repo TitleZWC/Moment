@@ -2,8 +2,8 @@ package com.titlezwc.moment.presentation.view;
 
 import android.os.Bundle;
 
-import com.titlezwc.common.view.activity.BaseActivity;
-import com.titlezwc.log.LogUtils;
+import com.titlezwc.moment.common.view.activity.BaseActivity;
+import com.titlezwc.moment.log.LogUtils;
 import com.titlezwc.moment.R;
 
 public class MainActivity extends BaseActivity {

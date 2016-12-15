@@ -1,4 +1,4 @@
-package com.titlezwc.log;
+package com.titlezwc.moment.log;
 
 import org.junit.Test;
 

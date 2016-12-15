@@ -1,4 +1,4 @@
-package com.titlezwc.data;
+package com.titlezwc.moment.data;
 
 import org.junit.Test;
 
