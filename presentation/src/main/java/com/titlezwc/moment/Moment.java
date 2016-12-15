@@ -18,6 +18,7 @@ import com.titlezwc.moment.presentation.proxy.impl.ActivityProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.ApplicationActionProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.ApplicationProxyImpl;
 import com.titlezwc.moment.presentation.proxy.impl.FragmentProxyImpl;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Administrator on 2016/11/28.
@@ -85,5 +86,10 @@ public class Moment extends BaseApplication {
                 .printEnable(buildType)
                 .writeEnable(buildType)
                 .build());
+    }
+
+    private void initUmeng() {
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(this, "5853147f1061d21be7002746", BuildConfig.FLAVOR));
     }
 }

@@ -41,6 +41,7 @@ ext {
     testingSupportLibVersion = '0.1'
     leakCanaryVersion = '1.3.1'
     daggerVersion = '2.8'
+    umengVersion = '6.0.1'//latest.integration
 
 //    domainDependencies = [
 //            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
@@ -60,6 +61,7 @@ ext {
             leakCanary_no_op: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
             dagger          : "com.google.dagger:dagger:${daggerVersion}",
             daggerCompiler  : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            umeng           : "com.umeng.analytics:analytics:${umengVersion}",
 
     ]
     testDependencies = [

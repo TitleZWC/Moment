@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.titlezwc.moment.common.application.BaseApplication;
 import com.titlezwc.moment.common.view.activity.BaseActivity;
 import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by TitleZWC on 2016/12/9.
@@ -40,12 +41,12 @@ public class ActivityProxyImpl implements ActivityProxyListener {
 
     @Override
     public void onResume(BaseActivity activity) {
-
+        MobclickAgent.onResume(activity);
     }
 
     @Override
     public void onPause(BaseActivity activity) {
-
+        MobclickAgent.onPause(activity);
     }
 
     @Override

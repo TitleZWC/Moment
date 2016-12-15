@@ -44,7 +44,8 @@ dependencies {
     compile globalDependencies.rxJava
     compile globalDependencies.rxAndroid
     compile globalDependencies.javaxInject
-    compile globalDependencies.javaxAnnotation
+    compile globalDependencies.javaxInject
+    compile globalDependencies.umeng
     compile project(':domain')
     compile project(':data')
 
