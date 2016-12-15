@@ -33,6 +33,7 @@ public class Moment extends BaseApplication {
         initLog();
         super.onCreate();
         mProcessName = AppUtils.getProcessName(this);
+        initUmeng();
     }
 
     @Override
