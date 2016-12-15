@@ -9,7 +9,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/module" />
+            <option value="$PROJECT_DIR$/module/feature" />
+            <option value="$PROJECT_DIR$/module/feature/common" />
+            <option value="$PROJECT_DIR$/module/resource" />
+            <option value="$PROJECT_DIR$/module/utils" />
+            <option value="$PROJECT_DIR$/module/utils/log" />
+            <option value="$PROJECT_DIR$/presentation" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
