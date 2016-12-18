@@ -43,6 +43,7 @@ ext {
     daggerVersion = '2.8'
     umengVersion = '6.0.1'//latest.integration
     butterKnifeVersion = '8.4.0'
+    recyclerViewVersion = '24.2.1'
 //    domainDependencies = [
 //            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
 //            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
@@ -50,20 +51,21 @@ ext {
 
 //    ]
     globalDependencies = [
-            multidex        : "com.android.support:multidex:${multidexVersion}",
-            timber          : "com.jakewharton.timber:timber:${timberVersion}",
-            logger          : "com.orhanobut:logger:${loggerVersion}",
-            rxJava          : "io.reactivex:rxjava:${rxJavaVersion}",
-            rxAndroid       : "io.reactivex:rxandroid:${rxAndroidVersion}",
-            javaxAnnotation : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
-            javaxInject     : "javax.inject:javax.inject:${javaxInjectVersion}",
-            leakCanary      : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
-            leakCanary_no_op: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
-            dagger          : "com.google.dagger:dagger:${daggerVersion}",
-            daggerCompiler  : "com.google.dagger:dagger-compiler:${daggerVersion}",
-            umeng           : "com.umeng.analytics:analytics:${umengVersion}",
-            butterKnife     : "com.jakewharton:butterknife:${butterKnifeVersion}",
-            butterKnifeCompiler     : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            multidex           : "com.android.support:multidex:${multidexVersion}",
+            timber             : "com.jakewharton.timber:timber:${timberVersion}",
+            logger             : "com.orhanobut:logger:${loggerVersion}",
+            rxJava             : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject        : "javax.inject:javax.inject:${javaxInjectVersion}",
+            leakCanary         : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            leakCanary_no_op   : "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            umeng              : "com.umeng.analytics:analytics:${umengVersion}",
+            butterKnife        : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            recyclerView       : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
     ]
     testDependencies = [
             junit      : "junit:junit:${jUnitVersion}",

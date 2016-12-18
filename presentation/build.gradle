@@ -73,6 +73,7 @@ dependencies {
     compile globalDependencies.umeng
     apt globalDependencies.butterKnifeCompiler
     compile globalDependencies.butterKnife
+    compile globalDependencies.recyclerView
     compile project(':domain')
     compile project(':data')
 

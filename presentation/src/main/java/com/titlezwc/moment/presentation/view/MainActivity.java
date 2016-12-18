@@ -1,6 +1,7 @@
 package com.titlezwc.moment.presentation.view;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -8,13 +9,18 @@ import com.titlezwc.moment.common.view.activity.BaseActivity;
 import com.titlezwc.moment.log.LogUtils;
 import com.titlezwc.moment.R;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
     @BindView(R.id.tv_text)
     protected TextView mTextView;
+    @BindView(R.id.lv_appInfo)
+    protected ListView mRecyclerView;
 
+    private ArrayList mList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
