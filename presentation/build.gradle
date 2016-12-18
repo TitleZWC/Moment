@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
     def build_debug = globalConfiguration.getAt("build_debug").equals("true")
@@ -45,6 +46,10 @@ android {
             flavor.manifestPlaceholders = [UMENT_CHANEL_VALUE: name,
                                            INSTALL_VALUE     : name,]
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 def getBuildType() {
@@ -66,6 +71,8 @@ dependencies {
     compile globalDependencies.javaxInject
     compile globalDependencies.javaxInject
     compile globalDependencies.umeng
+    apt globalDependencies.butterKnifeCompiler
+    compile globalDependencies.butterKnife
     compile project(':domain')
     compile project(':data')
 
