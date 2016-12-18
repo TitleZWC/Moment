@@ -18,19 +18,39 @@ android {
 
         multiDexEnabled true
 
-        buildConfigField "long","BUILD_TIME",System.currentTimeMillis().toString()+"L"
+        buildConfigField "long", "BUILD_TIME", System.currentTimeMillis().toString() + "L"
     }
     buildTypes {
         release {
-            buildConfigField "boolean","MOMENT_DEBUG",String.valueOf(build_debug)
+            buildConfigField "boolean", "MOMENT_DEBUG", String.valueOf(build_debug)
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            buildConfigField "boolean","MOMENT_DEBUG","true"
+            buildConfigField "boolean", "MOMENT_DEBUG", "true"
         }
 
+    }
+    productFlavors {
+        if (build_debug) {
+            官方 {}
+        } else {
+            "360" {}
+            "91" {}
+        }
+    }
+    productFlavors.all {
+        flavor ->
+            flavor.manifestPlaceholders = [UMENT_CHANEL_VALUE: name,
+                                           INSTALL_VALUE     : name,]
+    }
+}
+
+def getBuildType() {
+    android.variantFilter { variant ->
+        def names = varient.flavors.name
+        return varient.buildType.name
     }
 }
 
