@@ -1,4 +1,4 @@
-package com.titlezwc.moment.presentation.view;
+package com.titlezwc.moment.presentation.model;
 
 import android.graphics.drawable.Drawable;
 
@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by TitleZWC on 2016/12/19.
  */
-public class AppInfo {
+public class AppInfoModel {
     private Long id;
     private String packageName;
     private String appName;

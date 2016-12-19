@@ -1,10 +1,12 @@
-package com.titlezwc.moment.presentation.view;
+package com.titlezwc.moment.presentation.service;
 
 import android.app.Service;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+
+import com.titlezwc.moment.presentation.model.AppInfoModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
  */
 
 public class InfoService extends Service {
-    private List<AppInfo> appInfoList;
+    private List<AppInfoModel> appInfoModelList;
 
     @Nullable
     @Override
@@ -23,16 +25,16 @@ public class InfoService extends Service {
     }
 
     private void getAppInfo() {
-        appInfoList = new ArrayList<>();
+        appInfoModelList = new ArrayList<>();
         List<PackageInfo> packageInfos = getPackageManager().getInstalledPackages(0);
         for (PackageInfo info : packageInfos) {
-            AppInfo tmpInfo = new AppInfo();
+            AppInfoModel tmpInfo = new AppInfoModel();
             tmpInfo.setAppName(info.applicationInfo.loadLabel(getPackageManager()).toString());
             tmpInfo.setPackageName(info.packageName);
             tmpInfo.setVersionName(info.versionName);
             tmpInfo.setVersionCode(info.versionCode);
             tmpInfo.setIcon(info.applicationInfo.loadIcon(getPackageManager()));
-            appInfoList.add(tmpInfo);
+            appInfoModelList.add(tmpInfo);
         }
     }
 }

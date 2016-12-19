@@ -51,7 +51,7 @@ public class BaseActivity extends FragmentActivity implements HasComponent<Activ
         requestWindowFeature(Window.FEATURE_ACTION_MODE_OVERLAY);
     }
 
-    private void initializeInjector() {
+    protected void initializeInjector() {
         mActivityComponent = DaggerActivityComponent.builder()
                 .applicationComponent(getApplicationComponent())
                 .activityModule(getActivityModule())
@@ -184,7 +184,7 @@ public class BaseActivity extends FragmentActivity implements HasComponent<Activ
         LogUtils.d("{}:startActivityForResult", mSimpleName);
     }
 
-    private ApplicationComponent getApplicationComponent() {
+    protected ApplicationComponent getApplicationComponent() {
         return ((BaseApplication) getApplication()).getComponent();
     }
 
