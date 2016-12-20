@@ -14,10 +14,12 @@ import com.titlezwc.moment.presentation.internal.di.components.DaggerAppInfoActi
 import com.titlezwc.moment.presentation.internal.di.modules.AppInfoActivityModule;
 import com.titlezwc.moment.presentation.model.AppInfoModel;
 import com.titlezwc.moment.presentation.presenter.AppInfoPresenter;
+import com.titlezwc.moment.presentation.utils.AppInfoUtils;
 import com.titlezwc.moment.presentation.view.AppInfoView;
 import com.titlezwc.moment.presentation.view.adapter.AppInfoAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -25,15 +27,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity implements AppInfoView, AppInfoAdapter.OnItemViewClickListener {
-    @BindView(R.id.tv_text)
-    protected TextView mTextView;
     @BindView(R.id.lv_appInfo)
     protected RecyclerView mRecyclerView;
     @Inject
     protected AppInfoAdapter mAppInfoAdapter;
     @Inject
     protected AppInfoPresenter mPresenter;
-    private ArrayList<AppInfoModel> mList;
+    private List<AppInfoModel> mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +42,12 @@ public class MainActivity extends BaseActivity implements AppInfoView, AppInfoAd
         ButterKnife.bind(this);
         mPresenter.setView(this);
         initRecyclerView();
-        mTextView.setText("this is main Activity");
-        mTextView.setOnClickListener(v -> Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show());
-        LogUtils.d("LogUtils :{}", "onCreate");
+    }
+
+    private void initData() {
+        mList = AppInfoUtils.getAppsInfo(this);
+        initData();
+        ((AppInfoAdapter) mRecyclerView.getAdapter()).refresh(mList);
     }
 
     @Override

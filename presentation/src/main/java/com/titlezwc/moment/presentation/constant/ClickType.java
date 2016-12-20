@@ -5,5 +5,5 @@ package com.titlezwc.moment.presentation.constant;
  */
 
 public class ClickType {
-    public static final int TYPE_ITEM_CLICK = 0;
+    public static final int TYPE_APP_INFO_ITEM_CLICK = 0;
 }
