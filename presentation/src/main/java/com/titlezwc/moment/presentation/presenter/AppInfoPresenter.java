@@ -9,4 +9,6 @@ import com.titlezwc.moment.presentation.view.AppInfoView;
 
 public interface AppInfoPresenter extends Persenter{
     void setView(AppInfoView view);
+
+    void getAppsList();
 }

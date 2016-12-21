@@ -1,20 +1,17 @@
 package com.titlezwc.moment.presentation.view.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.titlezwc.moment.common.view.activity.BaseActivity;
-import com.titlezwc.moment.log.LogUtils;
 import com.titlezwc.moment.R;
 import com.titlezwc.moment.presentation.internal.di.components.DaggerAppInfoActivityComponent;
 import com.titlezwc.moment.presentation.internal.di.modules.AppInfoActivityModule;
 import com.titlezwc.moment.presentation.model.AppInfoModel;
 import com.titlezwc.moment.presentation.presenter.AppInfoPresenter;
-import com.titlezwc.moment.presentation.utils.AppInfoUtils;
 import com.titlezwc.moment.presentation.view.AppInfoView;
 import com.titlezwc.moment.presentation.view.adapter.AppInfoAdapter;
 
@@ -33,7 +30,7 @@ public class MainActivity extends BaseActivity implements AppInfoView, AppInfoAd
     protected AppInfoAdapter mAppInfoAdapter;
     @Inject
     protected AppInfoPresenter mPresenter;
-    private List<AppInfoModel> mList;
+    private List<AppInfoModel> mList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +39,7 @@ public class MainActivity extends BaseActivity implements AppInfoView, AppInfoAd
         ButterKnife.bind(this);
         mPresenter.setView(this);
         initRecyclerView();
-    }
-
-    private void initData() {
-        mList = AppInfoUtils.getAppsInfo(this);
-        initData();
-        ((AppInfoAdapter) mRecyclerView.getAdapter()).refresh(mList);
+        mPresenter.getAppsList();
     }
 
     @Override
@@ -95,5 +87,19 @@ public class MainActivity extends BaseActivity implements AppInfoView, AppInfoAd
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.destroy();
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public void onAppsListGot(List<AppInfoModel> appsInfo) {
+        if (null != appsInfo && !appsInfo.isEmpty()) {
+            mList.clear();
+            mList.addAll(appsInfo);
+            ((AppInfoAdapter) mRecyclerView.getAdapter()).refresh(mList);
+        }
     }
 }

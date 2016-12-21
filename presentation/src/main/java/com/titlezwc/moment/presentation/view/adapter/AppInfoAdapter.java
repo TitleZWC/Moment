@@ -32,6 +32,7 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoHolder> {
 
     public void refresh(List<AppInfoModel> list) {
         mList = list;
+        notifyDataSetChanged();
     }
 
     @Override

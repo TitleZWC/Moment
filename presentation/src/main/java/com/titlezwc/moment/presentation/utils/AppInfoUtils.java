@@ -17,8 +17,8 @@ public class AppInfoUtils {
     public static List<AppInfoModel> getAppsInfo(Context context) {
         List appInfoModelList = new ArrayList<>();
         PackageManager packageManager = context.getPackageManager();
-        List<PackageInfo> packageInfos = packageManager.getInstalledPackages(0);
-        for (PackageInfo info : packageInfos) {
+        List<PackageInfo> packageInfoList = packageManager.getInstalledPackages(0);
+        for (PackageInfo info : packageInfoList) {
             AppInfoModel tmpInfo = new AppInfoModel();
             tmpInfo.setAppName(info.applicationInfo.loadLabel(packageManager).toString());
             tmpInfo.setPackageName(info.packageName);

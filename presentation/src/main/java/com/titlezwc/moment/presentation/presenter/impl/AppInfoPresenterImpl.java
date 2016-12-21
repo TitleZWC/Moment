@@ -1,6 +1,7 @@
 package com.titlezwc.moment.presentation.presenter.impl;
 
 import com.titlezwc.moment.presentation.presenter.AppInfoPresenter;
+import com.titlezwc.moment.presentation.utils.AppInfoUtils;
 import com.titlezwc.moment.presentation.view.AppInfoView;
 
 import javax.inject.Inject;
@@ -11,6 +12,16 @@ import javax.inject.Inject;
 
 public class AppInfoPresenterImpl implements AppInfoPresenter {
     private AppInfoView mView;
+
+    @Override
+    public void setView(AppInfoView view) {
+        mView = view;
+    }
+
+    @Override
+    public void getAppsList() {
+        mView.onAppsListGot(AppInfoUtils.getAppsInfo(mView.getContext()));
+    }
 
     @Inject
     public AppInfoPresenterImpl() {
@@ -42,8 +53,5 @@ public class AppInfoPresenterImpl implements AppInfoPresenter {
 
     }
 
-    @Override
-    public void setView(AppInfoView view) {
-        mView = view;
-    }
+
 }
