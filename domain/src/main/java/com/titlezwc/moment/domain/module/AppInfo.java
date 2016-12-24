@@ -1,16 +1,12 @@
-package com.titlezwc.moment.data.entity;
-
-
-import android.graphics.drawable.Drawable;
+package com.titlezwc.moment.domain.module;
 
 import java.util.Date;
 
 /**
- * Created by TitleZWC on 2016/12/23.
+ * Created by TitleZWC on 2016/12/25.
  */
 
-public class AppInfoEntity {
-    private Long id;
+public class AppInfo {  private Long id;
     private String packageName;
     private String appName;
     private String VersionName;
@@ -18,15 +14,15 @@ public class AppInfoEntity {
     private int openTimes;
     private long useTime;
 
-    public Drawable getIcon() {
-        return icon;
-    }
-
-    public void setIcon(Drawable icon) {
-        this.icon = icon;
-    }
-
-    private Drawable icon;
+//    public Drawable getIcon() {
+//        return icon;
+//    }
+//
+//    public void setIcon(Drawable icon) {
+//        this.icon = icon;
+//    }
+//
+//    private Drawable icon;
 
     public String getAppName() {
         return appName;
