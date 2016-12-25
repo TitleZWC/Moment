@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import com.titlezwc.moment.common.UIThread;
 import com.titlezwc.moment.common.application.BaseApplication;
 import com.titlezwc.moment.common.application.proxy.listener.ApplicationActionProxyListener;
 import com.titlezwc.moment.common.application.proxy.listener.ApplicationProxyListener;
@@ -13,6 +14,7 @@ import com.titlezwc.moment.common.view.proxy.listener.DefaultActivityProxyListen
 import com.titlezwc.moment.common.view.proxy.listener.DefaultFragmentProxyListener;
 import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
 import com.titlezwc.moment.data.net.AppInfo;
+import com.titlezwc.moment.domain.executor.PostExecutionThread;
 
 import javax.inject.Singleton;
 
@@ -96,6 +98,12 @@ public class ApplicationModule {
         return mHandler;
     }
 
+    @Provides
+    @Singleton
+    PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+        return uiThread;
+    }
+
     public static class Builder {
         private BaseApplication application;
         private ApplicationProxyListener applicationProxyListener;
@@ -138,7 +146,7 @@ public class ApplicationModule {
             return this;
         }
 
-        private void initEmptyFirldsWithDefaultValue() {
+        private void initEmptyFieldsWithDefaultValue() {
             if (null == this.activityProxyListener) {
                 this.activityProxyListener = new DefaultActivityProxyListener();
             }
@@ -148,7 +156,7 @@ public class ApplicationModule {
         }
 
         public ApplicationModule build() {
-            initEmptyFirldsWithDefaultValue();
+            initEmptyFieldsWithDefaultValue();
             return new ApplicationModule(this);
         }
 

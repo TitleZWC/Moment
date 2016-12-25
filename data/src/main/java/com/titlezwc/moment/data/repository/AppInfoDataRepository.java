@@ -1,6 +1,7 @@
 package com.titlezwc.moment.data.repository;
 
 import com.titlezwc.moment.data.entity.mapper.AppInfoEntityDataMapper;
+import com.titlezwc.moment.domain.internal.di.PerActivity;
 import com.titlezwc.moment.domain.module.AppInfo;
 import com.titlezwc.moment.data.repository.datasource.appinfo.AppInfoDataStoreFactory;
 import com.titlezwc.moment.domain.repository.AppInfoRepository;
@@ -12,7 +13,7 @@ import rx.Observable;
 /**
  * Created by TitleZWC on 2016/12/23.
  */
-
+@PerActivity
 public class AppInfoDataRepository implements AppInfoRepository {
     private final AppInfoDataStoreFactory mAppInfoDataStoreFactory;
     private final AppInfoEntityDataMapper mAppInfoEntityDataMapper;

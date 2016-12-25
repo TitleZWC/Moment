@@ -11,6 +11,7 @@ import com.titlezwc.moment.common.internal.di.modules.ApplicationModule;
 import com.titlezwc.moment.common.view.proxy.ActivityProxy;
 import com.titlezwc.moment.common.view.proxy.FragmentProxy;
 import com.titlezwc.moment.data.net.AppInfo;
+import com.titlezwc.moment.domain.executor.PostExecutionThread;
 
 import javax.inject.Singleton;
 
@@ -41,4 +42,6 @@ public interface ApplicationComponent {
     FragmentProxy fragmentProxy();
 
     AppManager appManager();
+
+    PostExecutionThread postExecutionThread();
 }

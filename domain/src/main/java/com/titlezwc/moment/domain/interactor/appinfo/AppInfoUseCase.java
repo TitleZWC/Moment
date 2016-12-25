@@ -8,134 +8,113 @@ import java.util.Map;
  */
 
 public final class AppInfoUseCase {
-    private Map<String, Object> mMap = new HashMap();
+    private Map<String, Object> mMap = new HashMap<>();
 
-    public boolean getBoolean(String paramString)
-    {
-        return Boolean.valueOf(String.valueOf(this.mMap.get(paramString))).booleanValue();
+    public boolean getBoolean(String key) {
+        return Boolean.valueOf(String.valueOf(this.mMap.get(key)));
     }
 
-    public boolean getBoolean(String paramString, boolean paramBoolean)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public boolean getBoolean(String key, boolean defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramBoolean;
-        return Boolean.valueOf(String.valueOf(localObject)).booleanValue();
+            return defaultValue;
+        return Boolean.valueOf(String.valueOf(localObject));
     }
 
-    public double getDouble(String paramString)
-    {
-        return Double.valueOf(String.valueOf(this.mMap.get(paramString))).doubleValue();
+    public double getDouble(String key) {
+        return Double.valueOf(String.valueOf(this.mMap.get(key)));
     }
 
-    public double getDouble(String paramString, double paramDouble)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public double getDouble(String key, double defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramDouble;
-        return Double.valueOf(String.valueOf(localObject)).doubleValue();
+            return defaultValue;
+        return Double.valueOf(String.valueOf(localObject));
     }
 
-    public float getFloat(String paramString)
-    {
-        return Float.valueOf(String.valueOf(this.mMap.get(paramString))).floatValue();
+    public float getFloat(String key) {
+        return Float.valueOf(String.valueOf(this.mMap.get(key)));
     }
 
-    public float getFloat(String paramString, float paramFloat)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public float getFloat(String key, float defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramFloat;
-        return Float.valueOf(String.valueOf(localObject)).floatValue();
+            return defaultValue;
+        return Float.valueOf(String.valueOf(localObject));
     }
 
-    public int getInt(String paramString)
-    {
-        return Integer.valueOf(String.valueOf(this.mMap.get(paramString))).intValue();
+    public int getInt(String key) {
+        return Integer.valueOf(String.valueOf(this.mMap.get(key)));
     }
 
-    public int getInt(String paramString, int paramInt)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public int getInt(String key, int defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramInt;
-        return Integer.valueOf(String.valueOf(localObject)).intValue();
+            return defaultValue;
+        return Integer.valueOf(String.valueOf(localObject));
     }
 
-    public long getLong(String paramString)
-    {
-        return Long.valueOf(String.valueOf(this.mMap.get(paramString))).longValue();
+    public long getLong(String key) {
+        return Long.valueOf(String.valueOf(this.mMap.get(key)));
     }
 
-    public long getLong(String paramString, long paramLong)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public long getLong(String key, long defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramLong;
-        return Long.valueOf(String.valueOf(localObject)).longValue();
+            return defaultValue;
+        return Long.valueOf(String.valueOf(localObject));
     }
 
-    public Object getObject(String paramString)
-    {
-        return this.mMap.get(paramString);
+    public Object getObject(String key) {
+        return this.mMap.get(key);
     }
 
-    public Object getObject(String paramString, Object paramObject)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public Object getObject(String key, Object defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramObject;
+            return defaultValue;
         return localObject;
     }
 
-    public String getString(String paramString)
-    {
-        Object localObject = this.mMap.get(paramString);
+    public String getString(String key) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
             return null;
         return String.valueOf(localObject);
     }
 
-    public String getString(String paramString1, String paramString2)
-    {
-        Object localObject = this.mMap.get(paramString1);
+    public String getString(String key, String defaultValue) {
+        Object localObject = this.mMap.get(key);
         if (localObject == null)
-            return paramString2;
+            return defaultValue;
         return String.valueOf(localObject);
     }
 
-    public void setBoolean(String paramString, boolean paramBoolean)
-    {
-        this.mMap.put(paramString, Boolean.valueOf(paramBoolean));
+    public void setBoolean(String key, boolean value) {
+        this.mMap.put(key, value);
     }
 
-    public void setDouble(String paramString, double paramDouble)
-    {
-        this.mMap.put(paramString, Double.valueOf(paramDouble));
+    public void setDouble(String key, double value) {
+        this.mMap.put(key, value);
     }
 
-    public void setFloat(String paramString, float paramFloat)
-    {
-        this.mMap.put(paramString, Float.valueOf(paramFloat));
+    public void setFloat(String key, float value) {
+        this.mMap.put(key, value);
     }
 
-    public void setInt(String paramString, int paramInt)
-    {
-        this.mMap.put(paramString, Integer.valueOf(paramInt));
+    public void setInt(String key, int value) {
+        this.mMap.put(key, value);
     }
 
-    public void setLong(String paramString, long paramLong)
-    {
-        this.mMap.put(paramString, Long.valueOf(paramLong));
+    public void setLong(String key, long value) {
+        this.mMap.put(key, value);
     }
 
-    public void setObject(String paramString, Object paramObject)
-    {
-        this.mMap.put(paramString, paramObject);
+    public void setObject(String key, Object value) {
+        this.mMap.put(key, value);
     }
 
-    public void setString(String paramString1, String paramString2)
-    {
-        this.mMap.put(paramString1, paramString2);
+    public void setString(String key, String value) {
+        this.mMap.put(key, value);
     }
 }
