@@ -1,6 +1,9 @@
 package com.titlezwc.moment.data.repository.datasource.appinfo;
 
-import com.titlezwc.moment.data.entity.AppInfoEntity;
+import android.content.pm.PackageInfo;
+
+
+import java.util.List;
 
 import rx.Observable;
 
@@ -10,5 +13,5 @@ import rx.Observable;
  */
 
 public interface AppInfoDataStore {
-    Observable<AppInfoEntity> getAppInfo();
+    Observable<List<PackageInfo>> getAppInfo();
 }

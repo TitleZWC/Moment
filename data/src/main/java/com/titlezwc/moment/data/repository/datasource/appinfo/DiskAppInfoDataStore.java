@@ -1,6 +1,10 @@
 package com.titlezwc.moment.data.repository.datasource.appinfo;
 
+import android.content.pm.PackageInfo;
+
 import com.titlezwc.moment.data.entity.AppInfoEntity;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -16,7 +20,7 @@ public class DiskAppInfoDataStore implements AppInfoDataStore{
     }
 
     @Override
-    public Observable<AppInfoEntity> getAppInfo() {
-        return null;
+    public Observable<List<PackageInfo>> getAppInfo() {
+        return Observable.empty();
     }
 }

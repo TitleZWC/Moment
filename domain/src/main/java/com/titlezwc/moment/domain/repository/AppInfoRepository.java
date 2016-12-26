@@ -3,6 +3,8 @@ package com.titlezwc.moment.domain.repository;
 
 import com.titlezwc.moment.domain.module.AppInfo;
 
+import java.util.List;
+
 import rx.Observable;
 
 /**
@@ -10,5 +12,5 @@ import rx.Observable;
  */
 
 public interface AppInfoRepository {
-    Observable<AppInfo> appModel();
+    Observable<List<AppInfo>> appModel();
 }
