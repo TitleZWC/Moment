@@ -1,20 +1,27 @@
 package com.titlezwc.moment.data.repository.datasource.appinfo;
 
+import android.content.Context;
+
+import com.titlezwc.moment.data.cache.AppInfoCache;
 import com.titlezwc.moment.data.net.Api.AppInfoApi;
-import com.titlezwc.moment.domain.internal.di.PerActivity;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Created by TitleZWC on 2016/12/24.
  */
-@PerActivity
+@Singleton
 public class AppInfoDataStoreFactory {
     private final AppInfoApi mAppInfoApi;
+    private Context mContext;
+    private AppInfoCache mAppInfoCache;
 
     @Inject
-    public AppInfoDataStoreFactory(AppInfoApi appInfoApi) {
+    public AppInfoDataStoreFactory(Context context, AppInfoApi appInfoApi, AppInfoCache appInfoCache) {
         mAppInfoApi = appInfoApi;
+        mContext = context;
+        mAppInfoCache = appInfoCache;
     }
 
     public CloudAppInfoDataStore createAppInfoCloud() {
@@ -22,6 +29,6 @@ public class AppInfoDataStoreFactory {
     }
 
     public DiskAppInfoDataStore createAppInfoDisk() {
-        return new DiskAppInfoDataStore();
+        return new DiskAppInfoDataStore(mContext, mAppInfoCache);
     }
 }

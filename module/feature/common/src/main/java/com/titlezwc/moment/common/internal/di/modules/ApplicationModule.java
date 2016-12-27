@@ -13,6 +13,8 @@ import com.titlezwc.moment.common.view.proxy.listener.ActivityProxyListener;
 import com.titlezwc.moment.common.view.proxy.listener.DefaultActivityProxyListener;
 import com.titlezwc.moment.common.view.proxy.listener.DefaultFragmentProxyListener;
 import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
+import com.titlezwc.moment.data.cache.AppInfoCache;
+import com.titlezwc.moment.data.cache.impl.AppInfoCacheImpl;
 import com.titlezwc.moment.data.net.AppInfo;
 import com.titlezwc.moment.domain.executor.PostExecutionThread;
 
@@ -102,6 +104,12 @@ public class ApplicationModule {
     @Singleton
     PostExecutionThread providePostExecutionThread(UIThread uiThread) {
         return uiThread;
+    }
+
+    @Provides
+    @Singleton
+    AppInfoCache provideAppInfoCache(AppInfoCacheImpl appInfoCacheImpl) {
+        return appInfoCacheImpl;
     }
 
     public static class Builder {
