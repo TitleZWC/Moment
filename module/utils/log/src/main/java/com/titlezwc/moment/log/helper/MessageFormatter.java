@@ -50,7 +50,7 @@ public class MessageFormatter {
      * @param arg            The argument to be substituted in place of the formatting anchor
      * @return The formatted message
      */
-    final public static FormattingTuple format(String messagePattern, Object arg) {
+     private static FormattingTuple format(String messagePattern, Object arg) {
         return arrayFormat(messagePattern, new Object[]{arg});
     }
 
@@ -73,12 +73,12 @@ public class MessageFormatter {
      *                       anchor
      * @return The formatted message
      */
-    final public static FormattingTuple format(final String messagePattern,
+     private static FormattingTuple format(final String messagePattern,
                                                Object arg1, Object arg2) {
         return arrayFormat(messagePattern, new Object[]{arg1, arg2});
     }
 
-    static final Throwable getThrowableCandidate(Object[] argArray) {
+   private static  Throwable getThrowableCandidate(Object[] argArray) {
         if (argArray == null || argArray.length == 0) {
             return null;
         }
@@ -100,8 +100,8 @@ public class MessageFormatter {
      *                       anchors
      * @return The formatted message
      */
-    final public static FormattingTuple arrayFormat(final String messagePattern,
-                                                    final Object[] argArray) {
+    public static FormattingTuple arrayFormat(final String messagePattern,
+                                              final Object[] argArray) {
 
         Throwable throwableCandidate = getThrowableCandidate(argArray);
 
@@ -145,13 +145,13 @@ public class MessageFormatter {
                         // itself escaped: "abc x:\\{}"
                         // we have to consume one backward slash
                         sbuf.append(messagePattern.substring(i, j - 1));
-                        deeplyAppendParameter(sbuf, argArray[L], new HashMap());
+                        deeplyAppendParameter(sbuf, argArray[L], new HashMap<>());
                         i = j + 2;
                     }
                 } else {
 // normal case
                     sbuf.append(messagePattern.substring(i, j));
-                    deeplyAppendParameter(sbuf, argArray[L], new HashMap());
+                    deeplyAppendParameter(sbuf, argArray[L], new HashMap<>());
                     i = j + 2;
                 }
             }
@@ -165,33 +165,21 @@ public class MessageFormatter {
         }
     }
 
-    final static boolean isEscapedDelimeter(String messagePattern,
-                                            int delimeterStartIndex) {
-
+    private static boolean isEscapedDelimeter(String messagePattern, int delimeterStartIndex) {
         if (delimeterStartIndex == 0) {
             return false;
         }
         char potentialEscape = messagePattern.charAt(delimeterStartIndex - 1);
-        if (potentialEscape == ESCAPE_CHAR) {
-            return true;
-        } else {
-            return false;
-        }
+        return potentialEscape == ESCAPE_CHAR;
     }
 
-    final static boolean isDoubleEscaped(String messagePattern,
-                                         int delimeterStartIndex) {
-        if (delimeterStartIndex >= 2
-                && messagePattern.charAt(delimeterStartIndex - 2) == ESCAPE_CHAR) {
-            return true;
-        } else {
-            return false;
-        }
+    private static boolean isDoubleEscaped(String messagePattern, int delimeterStartIndex) {
+        return delimeterStartIndex >= 2
+                && messagePattern.charAt(delimeterStartIndex - 2) == ESCAPE_CHAR;
     }
 
     // special treatment of array values was suggested by 'lizongbo'
-    private static void deeplyAppendParameter(StringBuffer sbuf, Object o,
-                                              Map seenMap) {
+    private static void deeplyAppendParameter(StringBuffer sbuf, Object o, Map<Object, Object> seenMap) {
         if (o == null) {
             sbuf.append("null");
             return;
@@ -238,7 +226,7 @@ public class MessageFormatter {
     }
 
     private static void objectArrayAppend(StringBuffer sbuf, Object[] a,
-                                          Map seenMap) {
+                                          Map<Object, Object> seenMap) {
         sbuf.append('[');
         if (!seenMap.containsKey(a)) {
             seenMap.put(a, null);

@@ -1,15 +1,22 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+    def jdkVersion = globalConfiguration.getAt("jdkVersion")
+    compileOptions {
+        targetCompatibility jdkVersion
+        sourceCompatibility jdkVersion
+    }
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -25,6 +32,7 @@ android {
 dependencies {
 
     def globalDependencies = rootProject.ext.globalDependencies
+    def testDependencies = rootProject.ext.testDependencies
     def build_debug = globalDependencies.getAt("build_debug").equals("true")
     def build_type = globalDependencies.getAt("build_type").equals("debug")
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -37,18 +45,18 @@ dependencies {
     compile project(':domain')
 
     compile globalDependencies.multidex
+    compile globalDependencies.support_v7
     provided globalDependencies.rxAndroid
     provided globalDependencies.javaxAnnotation
     provided globalDependencies.dagger
     apt globalDependencies.daggerCompiler
 
-    if(build_type&&build_debug){
+    if (build_type && build_debug) {
         compile globalDependencies.leakCanary
-    }else{
+    } else {
         compile globalDependencies.leakCanary_no_op
     }
     testCompile globalDependencies.leakCanary_no_op
 
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+    testCompile testDependencies.junit
 }

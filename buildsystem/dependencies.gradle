@@ -43,7 +43,9 @@ ext {
     daggerVersion = '2.8'
     umengVersion = '6.0.1'//latest.integration
     butterKnifeVersion = '8.4.0'
-    recyclerViewVersion = '24.2.1'
+//    recyclerViewVersion = '24.2.1'
+    support_v7_Version = '24.2.1'
+    jdkVersion = JavaVersion.VERSION_1_8
 //    domainDependencies = [
 //            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
 //            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
@@ -65,7 +67,8 @@ ext {
             umeng              : "com.umeng.analytics:analytics:${umengVersion}",
             butterKnife        : "com.jakewharton:butterknife:${butterKnifeVersion}",
             butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
-            recyclerView       : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            recyclerView       : "com.android.support:recyclerview-v7:${support_v7_Version}",
+            support_v7         : "com.android.support:appcompat-v7:${support_v7_Version}",
     ]
     testDependencies = [
             junit      : "junit:junit:${jUnitVersion}",
