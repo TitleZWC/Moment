@@ -15,6 +15,8 @@ public class AppInfoModel {
     private int versionCode;
     private int openTimes;
     private long useTime;
+    private Date date;
+    private Drawable icon;
 
     public Drawable getIcon() {
         return icon;
@@ -23,8 +25,6 @@ public class AppInfoModel {
     public void setIcon(Drawable icon) {
         this.icon = icon;
     }
-
-    private Drawable icon;
 
     public String getAppName() {
         return appName;
@@ -90,5 +90,5 @@ public class AppInfoModel {
         VersionName = versionName;
     }
 
-    private Date date;
+
 }

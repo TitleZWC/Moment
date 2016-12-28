@@ -10,8 +10,10 @@ import com.titlezwc.moment.common.application.proxy.ApplicationProxy;
 import com.titlezwc.moment.common.internal.di.modules.ApplicationModule;
 import com.titlezwc.moment.common.view.proxy.ActivityProxy;
 import com.titlezwc.moment.common.view.proxy.FragmentProxy;
+import com.titlezwc.moment.data.cache.AppInfoCache;
 import com.titlezwc.moment.data.net.AppInfo;
 import com.titlezwc.moment.domain.executor.PostExecutionThread;
+import com.titlezwc.moment.domain.executor.ThreadExecutor;
 
 import javax.inject.Singleton;
 
@@ -44,4 +46,8 @@ public interface ApplicationComponent {
     AppManager appManager();
 
     PostExecutionThread postExecutionThread();
+
+    ThreadExecutor threadExecutor();
+
+    AppInfoCache appInfoCache();
 }

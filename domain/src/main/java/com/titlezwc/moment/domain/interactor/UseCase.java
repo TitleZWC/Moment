@@ -47,22 +47,25 @@ public abstract class UseCase {
     /**
      * Builds an {@link rx.Observable} which will be used when executing the current {@link UseCase}.
      */
-    protected abstract Observable buildUseCaseObservable();
+    protected abstract Observable buildUseCaseObservable(UseCaseParams params);
 
     /**
      * Executes the current use case.
      *
      * @param useCaseSubscriber The guy who will be listen to the observable build
-     * with {@link #buildUseCaseObservable()}.
+     * with {@link #buildUseCaseObservable(UseCaseParams params)}.
      */
     @SuppressWarnings("unchecked")
-    public void execute(Subscriber useCaseSubscriber) {
-        this.subscription = this.buildUseCaseObservable()
+    public void execute(Subscriber useCaseSubscriber, UseCaseParams params) {
+        this.subscription = this.buildUseCaseObservable(params)
                 .subscribeOn(Schedulers.from(threadExecutor))
                 .observeOn(postExecutionThread.getScheduler())
                 .subscribe(useCaseSubscriber);
     }
 
+    public void execute(Subscriber useCaseSubscriber) {
+        execute(useCaseSubscriber, null);
+    }
     /**
      * Unsubscribes from current {@link rx.Subscription}.
      */

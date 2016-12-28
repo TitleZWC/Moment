@@ -15,8 +15,10 @@ import com.titlezwc.moment.common.view.proxy.listener.DefaultFragmentProxyListen
 import com.titlezwc.moment.common.view.proxy.listener.FragmentProxyListener;
 import com.titlezwc.moment.data.cache.AppInfoCache;
 import com.titlezwc.moment.data.cache.impl.AppInfoCacheImpl;
+import com.titlezwc.moment.data.executor.JobExecutor;
 import com.titlezwc.moment.data.net.AppInfo;
 import com.titlezwc.moment.domain.executor.PostExecutionThread;
+import com.titlezwc.moment.domain.executor.ThreadExecutor;
 
 import javax.inject.Singleton;
 
@@ -104,6 +106,12 @@ public class ApplicationModule {
     @Singleton
     PostExecutionThread providePostExecutionThread(UIThread uiThread) {
         return uiThread;
+    }
+
+    @Provides
+    @Singleton
+    ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+        return jobExecutor;
     }
 
     @Provides
