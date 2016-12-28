@@ -17,59 +17,59 @@ public class HttpError {
     private int mCode;
     private int mStatusCode;
     private WeakReference<Subscriber> mSubscriber;
-    public int getmCode() {
+    public int getCode() {
         return mCode;
     }
 
-    public void setmCode(int mCode) {
+    public void setCode(int mCode) {
         this.mCode = mCode;
     }
 
-    public String getmMessage() {
+    public String getMessage() {
         return mMessage;
     }
 
-    public void setmMessage(String mMessage) {
+    public void setMessage(String mMessage) {
         this.mMessage = mMessage;
     }
 
-    public String getmParams() {
+    public String getParams() {
         return mParams;
     }
 
-    public void setmParams(String mParams) {
+    public void setParams(String mParams) {
         this.mParams = mParams;
     }
 
-    public int getmStatusCode() {
+    public int getStatusCode() {
         return mStatusCode;
     }
 
-    public void setmStatusCode(int mStatusCode) {
+    public void setStatusCode(int mStatusCode) {
         this.mStatusCode = mStatusCode;
     }
 
-    public WeakReference<Subscriber> getmSubscriber() {
+    public WeakReference<Subscriber> getSubscriber() {
         return mSubscriber;
     }
 
-    public void setmSubscriber(WeakReference<Subscriber> mSubscriber) {
+    public void setSubscriber(WeakReference<Subscriber> mSubscriber) {
         this.mSubscriber = mSubscriber;
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
-    public void setmTitle(String mTitle) {
+    public void setTitle(String mTitle) {
         this.mTitle = mTitle;
     }
 
-    public int getmType() {
+    public int getType() {
         return mType;
     }
 
-    public void setmType(int mType) {
+    public void setType(int mType) {
         this.mType = mType;
     }
 

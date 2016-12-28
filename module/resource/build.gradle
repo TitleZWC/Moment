@@ -1,14 +1,20 @@
 apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
-
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+    def jdkVersion = globalConfiguration.getAt("jdkVersion")
+    compileOptions {
+        targetCompatibility jdkVersion
+        sourceCompatibility jdkVersion
+    }
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -26,6 +32,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+//    compile 'com.android.support:appcompat-v7:24.2.1'
+//    testCompile 'junit:junit:4.12'
 }

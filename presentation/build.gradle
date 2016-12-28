@@ -1,19 +1,22 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
     def build_debug = globalConfiguration.getAt("build_debug").equals("true")
     compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
     buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+    def jdkVersion = globalConfiguration.getAt("jdkVersion")
 
     defaultConfig {
         minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
         targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
 
-        applicationId "com.titlezwc.moment"
-        versionCode 1
-        versionName "1.0"
+        applicationId globalConfiguration.getAt("androidApplicationId")
+        versionCode globalConfiguration.getAt("androidVersionCode")
+        versionName globalConfiguration.getAt("androidVersionName")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
@@ -45,6 +48,10 @@ android {
             flavor.manifestPlaceholders = [UMENT_CHANEL_VALUE: name,
                                            INSTALL_VALUE     : name,]
     }
+    compileOptions {
+        targetCompatibility jdkVersion
+        sourceCompatibility jdkVersion
+    }
 }
 
 def getBuildType() {
@@ -55,6 +62,8 @@ def getBuildType() {
 }
 
 dependencies {
+    def globalDependencies = rootProject.ext.globalDependencies
+    def testDependencies = rootProject.ext.testDependencies
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -66,11 +75,16 @@ dependencies {
     compile globalDependencies.javaxInject
     compile globalDependencies.javaxInject
     compile globalDependencies.umeng
+    apt globalDependencies.butterKnifeCompiler
+    compile globalDependencies.butterKnife
+    compile globalDependencies.recyclerView
+    compile globalDependencies.support_v7
     compile project(':domain')
     compile project(':data')
 
     compile project(':module:feature:common')
 //    compile project(':module:utils:log')
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+//    compile 'com.android.support:appcompat-v7:24.2.1'
+//    testCompile 'junit:junit:4.12'
+    testCompile testDependencies.junit
 }
