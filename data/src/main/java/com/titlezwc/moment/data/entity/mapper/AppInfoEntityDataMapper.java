@@ -23,6 +23,11 @@ public class AppInfoEntityDataMapper {
         mContext = context;
     }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
     public List<AppInfo> transform(List<PackageInfo> list) {
         List<AppInfo> appInfoModelList = new ArrayList<>();
         if(null!=list&&!list.isEmpty()){
