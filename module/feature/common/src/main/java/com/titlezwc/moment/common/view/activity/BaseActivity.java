@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.Window;
 
 import com.titlezwc.moment.common.AppManager;
@@ -51,7 +48,7 @@ public class BaseActivity extends FragmentActivity implements HasComponent<Activ
         requestWindowFeature(Window.FEATURE_ACTION_MODE_OVERLAY);
     }
 
-    private void initializeInjector() {
+    protected void initializeInjector() {
         mActivityComponent = DaggerActivityComponent.builder()
                 .applicationComponent(getApplicationComponent())
                 .activityModule(getActivityModule())
@@ -184,7 +181,7 @@ public class BaseActivity extends FragmentActivity implements HasComponent<Activ
         LogUtils.d("{}:startActivityForResult", mSimpleName);
     }
 
-    private ApplicationComponent getApplicationComponent() {
+    protected ApplicationComponent getApplicationComponent() {
         return ((BaseApplication) getApplication()).getComponent();
     }
 

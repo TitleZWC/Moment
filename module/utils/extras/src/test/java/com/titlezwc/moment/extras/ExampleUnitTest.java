@@ -1,4 +1,4 @@
-package com.titlezwc.moment.resource;
+package com.titlezwc.moment.extras;
 
 import org.junit.Test;
 
