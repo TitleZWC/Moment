@@ -28,6 +28,7 @@ android {
             buildConfigField "boolean", "MOMENT_DEBUG", String.valueOf(build_debug)
             minifyEnabled true
             shrinkResources true
+            zipAlignEnabled  true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -37,8 +38,9 @@ android {
     }
     productFlavors {
         if (build_debug) {
-            官方 {}
+            "official" {}
         } else {
+            "official" {}
             "360" {}
             "91" {}
         }
@@ -51,6 +53,14 @@ android {
     compileOptions {
         targetCompatibility jdkVersion
         sourceCompatibility jdkVersion
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
     }
 }
 
